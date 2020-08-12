@@ -1,0 +1,18 @@
+dependencies:
+  build:
+   - maven:3.3.3
+
+build_targets:
+  - name: default
+    tags:
+      project: 3
+    container:
+      image: yourbase/kotinos-ubuntu-jdk:18.04_8
+    commands:
+      - ./mvnw --no-transfer-progress -Pjakarta-apis -V -B -ff verify
+      - ./mvnw --no-transfer-progress -Pjakarta-apis -V -B -ff -q -pl docs site      
+
+ci:
+  builds:
+    - name: default
+      build_target: checks
