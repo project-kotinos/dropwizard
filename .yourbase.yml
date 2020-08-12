@@ -15,4 +15,4 @@ build_targets:
 ci:
   builds:
     - name: default
-      build_target: checks
+      build_target: default
