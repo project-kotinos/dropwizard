@@ -515,6 +515,19 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
             </plugin>
+            <plugin>
+              <groupId>io.yourbase</groupId>
+              <artifactId>yourbase-maven-plugin</artifactId>
+              <version>1.0-ALPHA</version>
+              <executions>
+                  <execution>
+                      <phase>initialize</phase>
+                      <goals>
+                          <goal>prepare-agent</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
         </plugins>
     </build>
 
@@ -548,4 +561,11 @@
             </plugin>
         </plugins>
     </reporting>
+    
+     <pluginRepositories>
+        <pluginRepository>
+            <id>yourbase-release</id>
+            <url>http://yourbase-artifacts.s3-website-us-west-2.amazonaws.com/maven/release</url>
+        </pluginRepository>
+     </pluginRepositories>
 </project>
