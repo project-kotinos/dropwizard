@@ -9,8 +9,8 @@ build_targets:
     container:
       image: yourbase/kotinos-ubuntu-jdk:18.04_8
     commands:
-      - ./mvnw --no-transfer-progress -Pjakarta-apis -V -B -ff verify
-      - ./mvnw --no-transfer-progress -Pjakarta-apis -V -B -ff -q -pl docs site      
+      - ./mvnw -X --no-transfer-progress -Pjakarta-apis -V -B -ff verify
+      - ./mvnw -X --no-transfer-progress -Pjakarta-apis -V -B -ff -q -pl docs site      
 
 ci:
   builds:
